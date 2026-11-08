@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Login - Ponto</title>
+</head>
+<body>
+    <div class="container-tela-cheia">
+        
+        <div class="metade-esquerda">
+            <h2>🕒 Ponto</h2>
+            <h1 class="titulo-boas-vindas">Seu controle de ponto,<br>simples e seguro.</h1>
+            <p class="texto-apoio">Registre sua jornada, acompanhe o histórico e<br>gerencie sua conta em um só lugar.</p>
+
+            <ul class="lista-passos">
+                <li class="item-passo">
+                    <span class="icone-check">✔️</span>
+                    Registro de ponto em poucos toques
+                </li>
+                <li class="item-passo">
+                    <span class="icone-check">✔️</span>
+                    Histórico completo da sua jornada
+                </li>
+                <li class="item-passo">
+                    <span class="icone-check">✔️</span>
+                    Autenticação em duas etapas
+                </li>
+            </ul>
+        </div>
+
+        <div class="metade-direita">
+            <div class="conteudo-formulario">
+                <h2 class="titulo-formulario">Entrar</h2>
+                <p class="subtitulo-formulario">Acesse sua conta com CPF e senha.</p>
+
+                <!-- Reaproveitamos as mesmas classes de Cadastro (grupo-input, caixa-input) para manter o visual padronizado, alterando apenas os IDs (login-cpf) -->
+                <div class="grupo-input">
+                    <label for="login-cpf">CPF</label>
+                    <div class="caixa-input">
+                        <span>🪪</span>
+                        <input type="text" id="login-cpf" placeholder="000.000.000-00">
+                    </div>
+                </div>
+
+                <div class="grupo-input" style="margin-bottom: 10px;">
+                    <label for="login-senha">Senha</label>
+                    <div class="caixa-input">
+                        <span>🔒</span>
+                        <input type="password" id="login-senha" placeholder="Digite sua senha">
+                        <span class="icone-olho">👁️</span>
+                    </div>
+                </div>
+                
+                <a href="#" class="link-esqueci-senha">Esqueci minha senha</a>
+
+                <!-- O ID muda para dar a função correta de Login via JS, mas a classe herda o estilo azul -->
+                <button id="botao-entrar" class="botao-azul-largo" style="margin-top: 25px;">Entrar</button>
+
+                <!-- Divisor desenhado pelo CSS (linhas virtuais ::before e ::after) -->
+                <div class="divisor-ou">
+                    <span>ou</span>
+                </div>
+
+                <button id="botao-ir-cadastro" class="botao-contorno">
+                    Primeiro acesso? <strong>Criar conta</strong>
+                </button>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

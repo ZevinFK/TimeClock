@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Ponto</title>
+</head>
+<body>
+    <!-- Este container unifica toda a página centralizada com limite de largura (1000px) -->
+    <div id="container-dashboard">
+        
+        <header id="cabecalho-principal">
+            <div>
+                <p>🔵 Ponto</p>
+            </div>
+            
+            <nav>
+                <button id="botao-meu-ponto">Meu ponto</button>
+                <a href="conta.html" id="botao-conta">Conta</a>
+            </nav>
+        </header>
+
+        <div class="cartao-relogio-principal">
+            <h1 id="visor-tempo-grade">14:14:09</h1>
+            <p class="letras-miudas" id="data-atual">Segunda-feira, 19 De Outubro</p>
+            <div class="status-de-horario" id="status-trabalho">Trabalhando desde 13:03</div>
+            <!-- Botão essencial com ID para bater o ponto no banco de dados e Classe reaproveitável para design -->
+            <button id="botao-bater-ponto" class="botao-vermelho-largo">Registrar saída</button>
+            <div class="texto-localizacao" id="mensagem-localizacao">Sua localização é resgistrada ao bater o ponto</div>
+        </div>
+
+        <!-- Layout construído com Floats dividindo 100% da tela em cartões de 32% com 2% de margem direita -->
+        <div class="painel-resumos">
+            
+            <div class="cartao-resumo">
+                <!-- ID incluso para o JS atualizar as horas trabalhadas em tempo real -->
+                <h2 id="horas-hoje">5h 10m</h2>
+                <p class="letras-do-cartao">Hoje</p>
+            </div>
+
+            <div class="cartao-resumo">
+                <h2 id="horas-semana">5h 10m</h2>
+                <p class="letras-do-cartao">Esta semana</p>
+            </div>
+
+            <!-- resumo-final anula os 2% de margem extra para o bloco não quebrar a linha -->
+            <div class="cartao-resumo resumo-final">
+                <h2 id="horas-mes">97h 45m</h2>
+                <p class="letras-do-cartao">Este mês</p>
+            </div>
+
+            <!-- Essencial para que o container não ache que não tem conteúdo e diminua a altura -->
+            <div class="limpar-fluxo"></div>
+        </div>
+
+        <div id="painel-historico">
+            <h3 class="titulo-historico">Registros de hoje</h3>
+
+            <!-- Flexbox empurra os extremos mantendo tudo justificado -->
+            <div class="linha-registro">
+                <span class="tag-entrada">Entrada</span>
+                <span class="local-verde">📍 No local</span>
+                <span>13:03</span>
+            </div>
+
+            <div class="linha-registro">
+                <span class="tag-saida">Saída</span>
+                <span class="local-vermelho">📍 Fora do local - 350 m</span>
+                <span>12:01</span>
+            </div>
+
+            <div class="linha-registro">
+                <span class="tag-entrada">Entrada</span>
+                <span class="local-verde">📍 No local</span>
+                <span>08:02</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

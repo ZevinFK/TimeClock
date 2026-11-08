@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Cadastro - Ponto</title>
+</head>
+<body>
+    <div class="container-tela-cheia">
+        <div class="metade-esquerda">
+            <h2>Ponto</h2>
+            <h1 class="titulo-boas-vindas">Bem-vindo(a)! <br>Vamos começar.</h1>
+            <p class="texto-apoio">Crie seu acesso em poucos passos e comece a <br>registrar seu ponto na empresa onde você trabalha.</p>
+
+             <ul class="lista-passos">
+                <!-- Desenhamos a lista numerada "na mão" para ter total controle sobre a bolinha azul no CSS -->
+                <li class="item-passo">
+                    <span class="numero-passo">1</span>
+                    Informe seu CPF e e-mail
+                </li>
+                <li class="item-passo">
+                    <span class="numero-passo">2</span>
+                    Escolha sua empresa
+                </li>
+                <li class="item-passo">
+                    <span class="numero-passo">3</span>
+                    Crie sua senha de acesso
+                </li>
+            </ul>
+        </div>
+
+        <div class="metade-direita">
+            
+            <div class="conteudo-formulario">
+                <h2 class="titulo-formulario">Primeiro acesso</h2>
+                <p class="subtitulo-formulario">Preencha os dados abaixo para criar sua conta.</p>
+
+                <!-- Grupo: CPF -->
+                <div class="grupo-input">
+                    <!-- O atributo FOR liga o texto do Label ao ID do Input. Se você clicar na palavra "CPF", o cursor pisca no campo! -->
+                    <label for="input-cpf">CPF</label>
+                    <div class="caixa-input">
+                        <span>🪪</span>
+                        <input type="text" id="input-cpf" placeholder="000.000.000-00">
+                    </div>
+                </div>
+
+                <!-- Grupo: E-mail -->
+                <div class="grupo-input">
+                    <label for="input-email">E-mail</label>
+                    <div class="caixa-input">
+                        <span>✉️</span>
+                        <!-- Type "email" força validação e abre teclado apropriado no celular -->
+                        <input type="email" id="input-email" placeholder="voce@empresa.com">
+                    </div>
+                </div>
+
+                <!-- Grupo: Empresa -->
+                <div class="grupo-input">
+                    <label for="select-empresa">Empresa onde você vai trabalhar</label>
+                    <div class="caixa-input">
+                        <span>🏢</span>
+                        <select id="select-empresa">
+                            <!-- O "disabled" impede de submeter o formulário sem selecionar uma opção real -->
+                            <option value="" disabled selected>Selecione a empresa</option>
+                            <option value="1">Empresa Tech</option>
+                            <option value="2">Comércio Local</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Grupo: Senha -->
+                <div class="grupo-input">
+                    <label for="input-senha">Senha</label>
+                    <div class="caixa-input">
+                        <span>🔒</span>
+                        <!-- Type "password" camufla o texto digitado -->
+                        <input type="password" id="input-senha" placeholder="Crie uma senha">
+                    </div>
+                </div>
+
+                <!-- Grupo: Confirmar Senha -->
+                <div class="grupo-input">
+                    <label for="input-confirma-senha">Confirmar senha</label>
+                    <div class="caixa-input">
+                        <span>🔒</span>
+                        <input type="password" id="input-confirma-senha" placeholder="Repita a senha">
+                    </div>
+                    <span class="dica-senha">Use no mínimo 8 caracteres, com letras e números.</span>
+                </div>
+
+                <div class="grupo-termos">
+                    <input type="checkbox" id="check-termos">
+                    <label for="check-termos">
+                        Li e aceito os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a>
+                    </label>
+                </div>
+
+                <!-- Os IDs (como "botao-criar-conta") são ganchos para o seu colega do JavaScript programar a lógica. O visual depende das classes. -->
+                <button id="botao-criar-conta" class="botao-azul-largo">Criar conta</button>
+
+                <p class="texto-login">Já tem conta? <a href="login.html">Entrar</a></p>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

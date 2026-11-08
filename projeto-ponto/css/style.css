@@ -1,0 +1,537 @@
+/* RESET BÁSICO: Remove margens padrão do navegador e garante que o padding não aumente o tamanho das caixas */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: #121214;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* --- TELA PRINCIPAL (DASHBOARD) --- */
+#cabecalho-principal {
+    display: flex;
+    justify-content: space-between; /* Joga a logo para a esquerda e o menu para a direita */
+    align-items: center; /* Centraliza os itens na vertical */
+    margin-bottom: 40px;
+}
+
+#container-dashboard {
+    max-width: 1000px; /* Trava a largura máxima para não esticar muito em telas gigantes */
+    margin: 0 auto; /* Centraliza a caixa inteira no meio da tela */
+    padding: 20px;  
+}
+
+#botao-meu-ponto, #botao-conta {
+    background-color: #202024; 
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px; 
+    border-radius: 8px; 
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.cartao-relogio-principal {
+    background-color: #202024;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#visor-tempo-grade {
+    color: rgb(231, 231, 231);
+    font-size: 70px;
+    font-weight: bold;
+    margin: 0 0 10px 0; 
+}
+
+.status-de-horario {
+    display: inline-block;
+    background-color: rgba(4, 211, 97, 0.1);
+    color: #04D361;
+    padding: 5px 15px;
+    border-radius: 999px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.letras-miudas {
+    color: #7C7C8A;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+/* Classe reaproveitável: Visual do botão principal. Usamos classe em vez de ID para poder reutilizar na tela de Conta */
+.botao-vermelho-largo {
+    background-color: #F75A68;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.texto-localizacao {
+    color: #7C7C8A;
+    font-size: 12px;
+    margin-top: 15px;
+    display: block;
+}
+
+/* Cartões usando a técnica de Float (flutuação) */
+.painel-resumos {
+    margin-bottom: 20px;
+}
+
+.letras-do-cartao {
+    color: #7C7C8A;
+    font-size: 12px;
+    display: block;
+    margin-top: 2px;
+}
+
+.cartao-resumo {
+    background-color: #202024;
+    border-radius: 8px;
+    padding: 20px;
+    width: 32%;
+    float: left; /* Coloca os cartões lado a lado */
+    margin-right: 2%;
+}
+
+.resumo-final {
+    margin-right: 0; /* Tira a margem do último para encaixar nos 100% */
+}
+
+/* Limpa o efeito do float para que as caixas de baixo não subam e quebrem o layout */
+.limpar-fluxo {
+    clear: both;
+}
+
+#painel-historico {
+    background-color: #202024;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.linha-registro {
+    padding: 15px 0;
+    border-bottom: 1px solid #323238;
+    display: flex;
+    justify-content: space-between; /* Distribui Entrada na esquerda, Local no centro e Hora na direita */
+}
+
+.tag-entrada {
+    display: inline-block;
+    background-color: rgba(4, 211, 97, 0.1);
+    color: #04D361;
+    padding: 5px 10px;
+    border-radius: 999px; /* Arredonda as bordas ao máximo para criar formato de pílula */
+    font-size: 14px;
+}
+
+.tag-saida {
+    display: inline-block;
+    background-color: rgba(191, 21, 21, 0.1);
+    color: #F75A68;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 14px;
+}
+
+.titulo-historico {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.local-verde {
+    color: #04D361;
+    font-size: 14px;
+}
+
+.local-vermelho {
+    color: #F75A68;
+    font-size: 14px;
+}
+
+/* --- TELA: MINHA CONTA --- */
+.cabecalho-simples {
+    margin-bottom: 40px;
+}
+
+.link-voltar {
+    color: #ffffff;
+    text-decoration: none; /* Remove a linha sublinhada padrão dos links <a> */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.perfil-usuario {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 40px;
+}
+
+.foto-perfil {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Faz um quadrado se transformar em um círculo perfeito */
+    margin-right: 20px;
+    background-color: #323238; 
+}
+
+.dados-perfil h2 {
+    font-size: 32px;
+    margin: 0 0 5px 0;
+}
+
+.status-ativo {
+    color: #04D361;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Configuração do Flexbox para as duas colunas da tela Minha Conta */
+.painel-configuracoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* ESTICA: Obriga ambas as colunas a terem a mesma altura máxima */
+    margin-bottom: 40px;
+}
+
+.coluna-esquerda {
+    width: 62%;
+    display: flex; /* Torna a coluna um contêiner flex para permitir que o cartão interno cresça */
+}
+
+.coluna-direita {
+    width: 35%;
+}
+
+.cartao-conta {
+    background-color: #202024;
+    border-radius: 8px;
+    padding: 30px;
+    width: 100%;
+}
+
+.titulo-cartao {
+    font-size: 18px;
+    margin-top: 0; 
+    margin-bottom: 25px;
+}
+
+.linha-info {
+    padding: 10px 0;
+    border-bottom: 1px solid #323238;
+}
+
+.linha-info.sem-borda {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.rotulo {
+    color: #7C7C8A;
+    font-size: 12px;
+    display: block; /* Força o elemento span a se comportar como div, pulando para a linha de baixo */
+    margin-bottom: 5px;
+}
+
+.dado {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.dado-com-icone {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icone-editar {
+    cursor: pointer;
+}
+
+.espaco-abaixo {
+    margin-bottom: 20px;
+}
+
+.bloco-texto-icone {
+    display: flex;
+    align-items: center;
+}
+
+.icone-esquerda {
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+.subtexto {
+    color: #7C7C8A;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+.seta-direita {
+    color: #7C7C8A;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Desenhando o botão Toggle (interruptor) apenas com CSS */
+.interruptor-ativo {
+    width: 44px;
+    height: 24px;
+    background-color: #3b82f6; 
+    border-radius: 20px; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Empurra a bolinha para a direita (estado ligado) */
+    padding: 2px; 
+    cursor: pointer;
+}
+
+.bolinha-branca {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%; 
+}
+
+/* --- TELAS SPLIT SCREEN (CADASTRO E LOGIN) --- */
+.container-tela-cheia {
+    display: flex;
+    min-height: 100vh; /* 100 Viewport Height: Cobre exatamente 100% da altura da janela do navegador */
+}
+
+.metade-esquerda {
+    width: 45%; 
+    background-color: #202024;
+    padding: 80px;
+    border-right: 1px solid #323238; 
+}
+
+.titulo-boas-vindas {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.texto-apoio {
+    color: #7C7C8A;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 60px;
+}
+
+.lista-passos {
+    list-style: none; /* Desliga os marcadores (bolinhas/números) padrão do navegador para a lista <ul> */
+}
+
+.item-passo {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 25px;
+    color: #C4C4CC;
+    font-size: 16px;
+}
+
+.numero-passo {
+    background-color: rgba(59, 130, 246, 0.2); 
+    color: #3b82f6;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.metade-direita {
+    width: 55%;
+    background-color: #121214;
+    display: flex;
+    justify-content: center; /* Flexbox centraliza o form no meio do espaço que sobra na tela */
+    align-items: center; 
+    padding: 40px;
+}
+
+.conteudo-formulario {
+    width: 100%;
+    max-width: 450px; 
+}
+
+.titulo-formulario {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.subtitulo-formulario {
+    color: #7C7C8A;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.grupo-input {
+    margin-bottom: 20px;
+}
+
+.grupo-input label {
+    display: block;
+    color: #C4C4CC;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.caixa-input {
+    display: flex;
+    align-items: center;
+    background-color: #202024;
+    border-radius: 8px;
+    padding: 0 15px;
+    height: 50px;
+    border: 1px solid transparent; 
+}
+
+/* PSEUDO-CLASSE AVANÇADA: Aplica a borda azul na caixa toda se o usuário clicar dentro do input que está lá dentro */
+.caixa-input:focus-within {
+    border: 1px solid #3b82f6;
+}
+
+.caixa-input input, .caixa-input select {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    width: 100%;
+    margin-left: 10px;
+    outline: none; /* Remove a linha azul nativa feia que o navegador coloca nos inputs clicados */
+}
+
+/* Formata o "texto fantasma" dos inputs */
+.caixa-input input::placeholder {
+    color: #7C7C8A;
+}
+
+.dica-senha {
+    color: #7C7C8A;
+    font-size: 12px;
+    display: block;
+    margin-top: 8px;
+}
+
+.grupo-termos {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+    font-size: 14px;
+    color: #C4C4CC;
+}
+
+.grupo-termos input {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.grupo-termos a, .texto-login a {
+    color: #3b82f6; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.botao-azul-largo {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    width: 100%; 
+    margin-bottom: 25px;
+}
+
+.texto-login {
+    text-align: center;
+    color: #C4C4CC;
+    font-size: 14px;
+}
+
+/* --- EXCLUSIVOS DA TELA DE LOGIN --- */
+
+.icone-check {
+    color: #3b82f6; 
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.icone-olho {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.link-esqueci-senha {
+    display: block; 
+    text-align: right;
+    color: #3b82f6;
+    font-size: 14px;
+    text-decoration: none;
+    margin-bottom: 25px;
+}
+
+.divisor-ou {
+    display: flex;
+    align-items: center;
+    color: #7C7C8A;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+/* Cria caixas virtuais antes (before) e depois (after) do texto "ou". 
+O flex:1 faz essas caixas crescerem e ocuparem todo o espaço restante, criando a linha */
+.divisor-ou::before,
+.divisor-ou::after {
+    content: ""; 
+    flex: 1;     
+    border-bottom: 1px solid #323238; 
+}
+
+.divisor-ou span {
+    padding: 0 15px; 
+}
+
+.botao-contorno {
+    background-color: transparent;
+    color: #C4C4CC;
+    border: 1px solid #323238;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+.botao-contorno strong {
+    color: #3b82f6; 
+}

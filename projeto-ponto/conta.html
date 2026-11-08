@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Minha Conta</title>
+</head>
+<body>
+    <div id="container-dashboard">
+        
+        <header class="cabecalho-simples">
+            <a href="ponto.html" class="link-voltar">← Minha conta</a>
+        </header>
+
+        <section class="perfil-usuario">
+            <div class="foto-perfil">
+                <img src="img/avatar.png" alt="Foto de perfil">
+            </div>
+            <div class="dados-perfil">
+                <h2>Lucas Silva</h2>
+                <span class="status-ativo">✔ Ativo</span>
+            </div>
+        </section>
+
+        <!-- Esta DIV inteira opera como Flexbox usando align-items: stretch para que as duas colunas abaixo sempre empatem em altura -->
+        <div class="painel-configuracoes">
+            
+            <div class="coluna-esquerda">
+                <div class="cartao-conta">
+                    <h3 class="titulo-cartao">Informações Pessoais</h3>
+                    
+                    <div class="linha-info">
+                        <span class="rotulo">Nome completo</span>
+                        <!-- IDs em todos os textos para permitir atualização dinâmica via Banco de Dados -->
+                        <p class="dado" id="info-nome">Lucas Silva</p>
+                    </div>
+
+                    <div class="linha-info">
+                        <span class="rotulo">E-mail</span>
+                        <div class="dado-com-icone">
+                            <p class="dado" id="info-email">lucas.silva@empresa.com</p>
+                            <span class="icone-editar">✏️</span> 
+                        </div>
+                    </div>
+
+                    <div class="linha-info">
+                        <span class="rotulo">Telefone</span>
+                        <p class="dado" id="info-telefone">(11) 98765-4321</p>
+                    </div>
+
+                    <!-- Usa classe extra de exceção para não ter a linha cinza divisória no último item -->
+                    <div class="linha-info sem-borda">
+                        <span class="rotulo">CPF ou ID</span>
+                        <p class="dado" id="info-cpf">***.456.789-**</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="coluna-direita">
+                
+                <div class="cartao-conta espaco-abaixo">
+                    <h3 class="titulo-cartao">Segurança e Acesso</h3>
+                    
+                    <div class="linha-info dado-com-icone">
+                        <div class="bloco-texto-icone">
+                            <span class="icone-esquerda">🔑</span>
+                            <div>
+                                <p class="dado">Alterar senha</p>
+                                <span class="subtexto">Última alteração há 3 meses</span>
+                            </div>
+                        </div>
+                        <span class="seta-direita">〉</span>
+                    </div>
+
+                    <div class="linha-info sem-borda dado-com-icone">
+                        <p class="dado">Autenticação em duas etapas</p>
+                        <span class="status-ativo">Ativada</span>
+                    </div>
+                </div>
+
+                <div class="cartao-conta">
+                    <h3 class="titulo-cartao">Configurações do Aplicativo</h3>
+                    
+                    <div class="linha-info dado-com-icone">
+                        <p class="dado">Notificações</p>
+                        <!-- Desenhamos o componente puramente em HTML/CSS para evitar carregar bibliotecas externas pesadas -->
+                        <div class="interruptor-ativo">
+                            <div class="bolinha-branca"></div>
+                        </div>
+                    </div>
+
+                    <div class="linha-info sem-borda dado-com-icone">
+                        <p class="dado">Privacidade e Dados</p>
+                        <span class="seta-direita">〉</span>
+                    </div>
+                </div>
+
+            </div>
+        </div> 
+
+        <!-- Reaproveita o visual da tela de ponto, mas tem um ID de Logout para o programador JS usar -->
+        <button id="botao-sair-conta" class="botao-vermelho-largo">Sair da conta</button>
+
+    </div>
+</body>
+</html>
