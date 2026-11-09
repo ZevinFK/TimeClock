@@ -22,11 +22,11 @@
         </header>
 
         <div class="cartao-relogio-principal">
-            <h1 id="visor-tempo-grade">14:14:09</h1>
-            <p class="letras-miudas" id="data-atual">Segunda-feira, 19 De Outubro</p>
-            <div class="status-de-horario" id="status-trabalho">Trabalhando desde 13:03</div>
+            <h1 id="visor-tempo-grade">Ponto</h1>
+            <p class="letras-miudas" id="data-atual"></p>
+            <div class="status-de-horario" id="status-trabalho">Carregando registros...</div>
             <!-- Botão essencial com ID para bater o ponto no banco de dados e Classe reaproveitável para design -->
-            <button id="botao-bater-ponto" class="botao-vermelho-largo">Registrar saída</button>
+            <button id="botao-bater-ponto" class="botao-vermelho-largo">Registrar entrada</button>
             <div class="texto-localizacao" id="mensagem-localizacao">Sua localização é resgistrada ao bater o ponto</div>
         </div>
 
@@ -35,18 +35,18 @@
             
             <div class="cartao-resumo">
                 <!-- ID incluso para o JS atualizar as horas trabalhadas em tempo real -->
-                <h2 id="horas-hoje">5h 10m</h2>
+                <h2 id="horas-hoje">—</h2>
                 <p class="letras-do-cartao">Hoje</p>
             </div>
 
             <div class="cartao-resumo">
-                <h2 id="horas-semana">5h 10m</h2>
+                <h2 id="horas-semana">—</h2>
                 <p class="letras-do-cartao">Esta semana</p>
             </div>
 
             <!-- resumo-final anula os 2% de margem extra para o bloco não quebrar a linha -->
             <div class="cartao-resumo resumo-final">
-                <h2 id="horas-mes">97h 45m</h2>
+                <h2 id="horas-mes">—</h2>
                 <p class="letras-do-cartao">Este mês</p>
             </div>
 
@@ -57,25 +57,9 @@
         <div id="painel-historico">
             <h3 class="titulo-historico">Registros de hoje</h3>
 
-            <!-- Flexbox empurra os extremos mantendo tudo justificado -->
-            <div class="linha-registro">
-                <span class="tag-entrada">Entrada</span>
-                <span class="local-verde">📍 No local</span>
-                <span>13:03</span>
-            </div>
-
-            <div class="linha-registro">
-                <span class="tag-saida">Saída</span>
-                <span class="local-vermelho">📍 Fora do local - 350 m</span>
-                <span>12:01</span>
-            </div>
-
-            <div class="linha-registro">
-                <span class="tag-entrada">Entrada</span>
-                <span class="local-verde">📍 No local</span>
-                <span>08:02</span>
-            </div>
+            <div id="lista-registros">Carregando registros...</div>
         </div>
     </div>
+    <script src="javascript.js" defer></script>
 </body>
 </html>

@@ -36,13 +36,22 @@
                 <h2 class="titulo-formulario">Primeiro acesso</h2>
                 <p class="subtitulo-formulario">Preencha os dados abaixo para criar sua conta.</p>
 
+                <!-- O nome e obrigatorio na tabela Usuario do banco de dados. -->
+                <div class="grupo-input">
+                    <label for="input-nome">Nome completo</label>
+                    <div class="caixa-input">
+                        <span>👤</span>
+                        <input type="text" id="input-nome" placeholder="Seu nome completo" autocomplete="name" required>
+                    </div>
+                </div>
+
                 <!-- Grupo: CPF -->
                 <div class="grupo-input">
                     <!-- O atributo FOR liga o texto do Label ao ID do Input. Se você clicar na palavra "CPF", o cursor pisca no campo! -->
                     <label for="input-cpf">CPF</label>
                     <div class="caixa-input">
                         <span>🪪</span>
-                        <input type="text" id="input-cpf" placeholder="000.000.000-00">
+                        <input type="text" id="input-cpf" placeholder="000.000.000-00" autocomplete="username" required>
                     </div>
                 </div>
 
@@ -52,7 +61,7 @@
                     <div class="caixa-input">
                         <span>✉️</span>
                         <!-- Type "email" força validação e abre teclado apropriado no celular -->
-                        <input type="email" id="input-email" placeholder="voce@empresa.com">
+                        <input type="email" id="input-email" placeholder="voce@empresa.com" autocomplete="email" required>
                     </div>
                 </div>
 
@@ -64,8 +73,6 @@
                         <select id="select-empresa">
                             <!-- O "disabled" impede de submeter o formulário sem selecionar uma opção real -->
                             <option value="" disabled selected>Selecione a empresa</option>
-                            <option value="1">Empresa Tech</option>
-                            <option value="2">Comércio Local</option>
                         </select>
                     </div>
                 </div>
@@ -76,7 +83,7 @@
                     <div class="caixa-input">
                         <span>🔒</span>
                         <!-- Type "password" camufla o texto digitado -->
-                        <input type="password" id="input-senha" placeholder="Crie uma senha">
+                        <input type="password" id="input-senha" placeholder="Crie uma senha" autocomplete="new-password" required>
                     </div>
                 </div>
 
@@ -85,7 +92,7 @@
                     <label for="input-confirma-senha">Confirmar senha</label>
                     <div class="caixa-input">
                         <span>🔒</span>
-                        <input type="password" id="input-confirma-senha" placeholder="Repita a senha">
+                        <input type="password" id="input-confirma-senha" placeholder="Repita a senha" autocomplete="new-password" required>
                     </div>
                     <span class="dica-senha">Use no mínimo 8 caracteres, com letras e números.</span>
                 </div>
@@ -105,5 +112,6 @@
             
         </div>
     </div>
+    <script src="javascript.js" defer></script>
 </body>
 </html>

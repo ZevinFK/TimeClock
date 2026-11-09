@@ -96,7 +96,42 @@ Douglas William
 
 ✅ Front-end concluído
 
-# 🔄 Integração Node.js em desenvolvimento
+# 🔄 Integração Node.js
+
+O navegador se comunica com uma API Node.js; somente o servidor acessa o MySQL.
+As senhas sao armazenadas como hashes e a sessao usa um cookie `HttpOnly`.
+
+## Executar localmente
+
+1. Instale o Node.js (versao 18 ou superior) e o MySQL.
+2. Execute o arquivo `TimeClockDB.sql` no MySQL Workbench para criar o banco e a empresa de exemplo.
+3. Instale as dependencias na pasta raiz do projeto:
+
+   ```sh
+   npm install
+   ```
+
+4. Copie `.env.example` para `.env` e preencha as credenciais do seu MySQL. Defina `JWT_SECRET` como uma chave aleatoria com pelo menos 32 caracteres.
+5. Inicie o servidor:
+
+   ```sh
+   npm start
+   ```
+
+6. Abra `http://localhost:3000/login.html` no navegador. Nao abra os arquivos HTML diretamente pelo explorador, pois a API precisa estar em execucao.
+
+O cadastro precisa de uma empresa existente na tabela `Empresa`. O SQL de exemplo cria uma empresa; para adicionar outras, insira registros nessa tabela.
+
+## Rotas da API
+
+- `GET /api/empresas` — lista as empresas para o cadastro.
+- `POST /api/auth/register` — cria uma conta.
+- `POST /api/auth/login` — autentica com CPF e senha.
+- `GET /api/auth/me` — retorna os dados da conta autenticada.
+- `POST /api/auth/logout` — encerra a sessao.
+- `GET /api/registros` e `POST /api/registros` — consulta e cria marcacoes do dia.
+
+Em producao, use HTTPS e configure `NODE_ENV=production` para que o cookie de sessao seja marcado como `Secure`.
 
 # 📄 Licença
 Projeto desenvolvido exclusivamente para fins educacionais.
